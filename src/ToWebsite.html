@@ -1,0 +1,90 @@
+<p>
+    This program allows you to convert an infix expression into a postfix expression using an algorithm that utilizes
+    a custom-made stack class. <br>
+    Example of an infix expression: 2+3*4<br>
+    Example of postfix expression: 234*+
+</p>
+
+<input type="text" id="stdin"/>
+<p id="credits"></p>
+<form id="form">
+    <button id="run">Run</button>
+</form>
+<code id="output"></code>
+
+<script>
+    var run = document.getElementById("run"); //referring to when run is clicked
+
+    run.addEventListener("click", function (e) { //add an event listener
+
+        e.preventDefault();
+
+        var stdin = document.getElementById("stdin"); //get data from stdin on line 8 and store it in var stdin
+        var form = document.getElementById("form");
+        var credits = document.getElementById("credits");
+        var output = document.getElementById("output");
+
+        output.innerHTML = "Loading...";
+
+        console.log(stdin.value);
+
+        //url setup
+        var obj = {};
+        obj["clientId"] = "d46ca2f03cae6008c0afef63f3da5feb"; //client ID from jdoodle
+        obj["clientSecret"] = "1e91423d6e49ca3c3b317d56b27135f9dacce89fd65e263705d1607ddd5ca679"; //client secret from jdoodle
+        //java code goes in next line
+        obj["script"] = "yourFormattedJavaCode";
+        obj["language"] = "java";
+        obj["versionIndex"] = "0";
+        obj["stdin"] = stdin.value;
+        var jsonStr = JSON.stringify(obj);
+
+        console.log(jsonStr);
+
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url = "https://api.jdoodle.com/v1/execute"; //online java compiler
+        fetch(proxyurl + url, {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: jsonStr
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log(data);
+                var outputStr = data.output;
+                console.log(outputStr);
+                var formattedOutput = outputStr.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                output.innerHTML = formattedOutput;
+            })
+            .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+        const creditsUrl = "https://api.jdoodle.com/v1/credit-spent";
+        fetch(proxyurl + creditsUrl, {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: jsonStr
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log(data);
+                var creditsLeft = 200 - data.used;
+                console.log(credits);
+                credits.innerHTML = "Runs left: " + creditsLeft;
+            })
+            .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+
+
+
+    });
+</script>
