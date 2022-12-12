@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06be906b-39ab-4c6b-ab4a-41f0fdbc5be2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/InfixToPostFixWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InfixToPostFixWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfixToPostFixWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToWebsite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToWebsite.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +49,14 @@
       <option name="presentableId" value="Default" />
       <updated>1670798618205</updated>
     </task>
+    <task id="LOCAL-00001" summary="added an html file to allow the program to go onto a website. uses JS and the jdoodle api. max 200 runs.">
+      <created>1670813399371</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670813399371</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -59,5 +69,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added an html file to allow the program to go onto a website. uses JS and the jdoodle api. max 200 runs." />
+    <option name="LAST_COMMIT_MESSAGE" value="added an html file to allow the program to go onto a website. uses JS and the jdoodle api. max 200 runs." />
   </component>
 </project>
