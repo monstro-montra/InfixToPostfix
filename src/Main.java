@@ -1,21 +1,13 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String example1 = "a*b/(c-d)";
-        String example2 = "(a-b*c)/(d*e*f+g)";
-        String example3 = "a/b*(c+(d-e))";
-        String example4 = "(a^b*c-d)^e+f^g^h";
+        Scanner in = new Scanner(System.in);
+        System.out.println("Insert an expression with no integers or decimals. E.g., 5+7*4");
+        String expression = in.next();
+        System.out.println("Infix: " + expression);
+        System.out.println("Postfix: " + convertToPostFix(expression));
 
-        System.out.println("Before: " + example1);
-        System.out.println("After: " + convertToPostFix(example1));
-
-        System.out.println("Before: " + example2);
-        System.out.println("After: " + convertToPostFix(example2));
-
-        System.out.println("Before: " + example3);
-        System.out.println("After: " + convertToPostFix(example3));
-
-        System.out.println("Before: " + example4);
-        System.out.println("After: " + convertToPostFix(example4));
 
     }
 
